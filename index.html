@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #eef1f5;
+      background-color: #eef2f5;
       margin: 0;
       padding: 2rem;
       display: none;
@@ -17,18 +17,32 @@
       margin: auto;
       background: white;
       padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    h1 {
+      color: #00778A;
+    }
+    h3 {
+      margin-top: 2rem;
+      color: #003F4E;
+    }
+    ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
     }
     .cta a {
       display: inline-block;
-      background-color: #005691;
+      background-color: #00778A;
       color: white;
       padding: 1rem 2rem;
-      border-radius: 5px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
+    }
+    .cta a:hover {
+      background-color: #005f6f;
     }
   </style>
 </head>
@@ -38,8 +52,19 @@
     <p>Willkommen zur interaktiven Jubiläumsseite von SICOS BW!</p>
     <p>Entdecken Sie, wie High Performance Computing und Datenintelligenz Baden-Württemberg vorangebracht haben – mit echten Geschichten, innovativer Technik und KI-gestütztem Storytelling.</p>
 
-    <h3>🤖 SICOS BW Geschichtenerzähler</h3>
-    <p><em>(Hier startet Ihr KI-basierter Dialog zur Unternehmensgeschichte)</em></p>
+    <h3>🧠 Lernen Sie <strong>LOTHAR</strong> kennen – den SICOS BW Geschichten-GPT</h3>
+    <p>
+      <strong>LOTHAR</strong> ist unser KI-basierter Geschichtenerzähler, benannt nach dem Innovationsförderer Lothar Späth.<br>
+      Er wurde mit Meilensteinen, Personen und Perspektiven aus 15 Jahren SICOS BW gefüttert.
+    </p>
+    <p>
+      👉 <em>Derzeit befindet sich LOTHAR im Prototyp-Stadium.</em> Die Nutzung ist passwortgeschützt und der Link nicht öffentlich zugänglich.
+    </p>
+    <div class="cta">
+      <a href="https://chatgpt.com/g/g-6833681ef1cc8191995f2b3db75f3a91-sicos-bw-geschichten-gpt" target="_blank">
+        🤖 Jetzt mit LOTHAR sprechen
+      </a>
+    </div>
 
     <h3>📚 Ein digitales Jubiläumsarchiv</h3>
     <ul>
@@ -48,40 +73,48 @@
       <li>Exklusiver Zugang für Partner, Förderer und Mitarbeitende</li>
     </ul>
 
+    <h3>🚀 Und was kommt als Nächstes?</h3>
+    <ul>
+      <li>🎤 Interaktive Interviews mit prägenden Persönlichkeiten aus Wirtschaft, Wissenschaft & Politik</li>
+      <li>🧬 Erweiterung von LOTHAR um persönliche Anekdoten und neue Perspektiven</li>
+      <li>📦 Aufbau eines lebendigen, multimedialen Wissensarchivs</li>
+      <li>🔐 Zugriff via API für geschützte, tiefere Unternehmensintegration</li>
+    </ul>
+
     <div class="cta">
-      <a href="#">Pilotgespräch vereinbaren</a>
+      <a href="#">📅 Pilotgespräch vereinbaren</a>
     </div>
   </div>
 
   <div id="error" style="display:none;"></div>
 
-<script>
-(function() {
-  document.body.style.display = "block";
-  var password = prompt("Diese Seite ist geschützt. Bitte geben Sie das Passwort ein:");
-  if (password === "15sicosbw") {
-    document.getElementById('content').style.display = 'block';
-    document.getElementById('error').style.display = 'none';
-  } else {
-    document.getElementById('content').style.display = 'none';
-    document.getElementById('error').style.display = 'block';
-    document.getElementById('error').innerHTML = `
-      <div style="text-align:center; margin-top: 5rem;">
-        <h2>Leider war das nicht das richtige Passwort.</h2>
-        <p>
-          <span style="vertical-align: middle;">Erneut versuchen?</span>
-          <a href="" title="Neu laden" style="margin-left: 10px; vertical-align: middle;">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" style="vertical-align: middle;">
-              <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 3.31-2.69 6-6 6a6.006 6.006 0 01-5.65-4.35l-1.92.51A8.003 8.003 0 0012 20c4.42 0 8-3.58 8-8s-3.58-8-8-8z" fill="#005691"/>
-            </svg>
-          </a>
-        </p>
-        <p>Besuchen Sie auch unsere offizielle Website:</p>
-        <a href="https://www.sicos-bw.de" target="_blank" style="font-size: 1.2rem; color: #005691; text-decoration: underline;">www.sicos-bw.de</a>
-      </div>
-    `;
-  }
-})();
-</script>
+  <script>
+    (function() {
+      document.body.style.display = "block";
+      var password = prompt("Diese Seite ist geschützt. Bitte geben Sie das Passwort ein:");
+      if (password === "15sicosbw") {
+        document.getElementById('content').style.display = 'block';
+        document.getElementById('error').style.display = 'none';
+      } else {
+        document.getElementById('content').style.display = 'none';
+        document.getElementById('error').style.display = 'block';
+        document.getElementById('error').innerHTML = `
+          <div style="text-align:center; margin-top: 5rem;">
+            <h2>Leider war das nicht das richtige Passwort.</h2>
+            <p>
+              <span style="vertical-align: middle;">Erneut versuchen?</span>
+              <a href="" title="Neu laden" style="margin-left: 10px; vertical-align: middle;">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" style="vertical-align: middle;">
+                  <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 3.31-2.69 6-6 6a6.006 6.006 0 01-5.65-4.35l-1.92.51A8.003 8.003 0 0012 20c4.42 0 8-3.58 8-8s-3.58-8-8-8z" fill="#00778A"/>
+                </svg>
+              </a>
+            </p>
+            <p>Besuchen Sie auch unsere offizielle Website:</p>
+            <a href="https://www.sicos-bw.de" target="_blank" style="font-size: 1.2rem; color: #00778A; text-decoration: underline;">www.sicos-bw.de</a>
+          </div>
+        `;
+      }
+    })();
+  </script>
 </body>
 </html>
