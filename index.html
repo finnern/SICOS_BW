@@ -99,33 +99,9 @@
 
   <div id="error" style="display:none;"></div>
 
-  <script>
-    (function() {
-      document.body.style.display = "block";
-      var password = prompt("Diese Seite ist geschützt. Bitte geben Sie das Passwort ein:");
-      if (password === "15sicosbw") {
-        document.getElementById('content').style.display = 'block';
-        document.getElementById('error').style.display = 'none';
-      } else {
-        document.getElementById('content').style.display = 'none';
-        document.getElementById('error').style.display = 'block';
-        document.getElementById('error').innerHTML = `
-          <div style="text-align:center; margin-top: 5rem;">
-            <h2>Leider war das nicht das richtige Passwort.</h2>
-            <p>
-              <span style="vertical-align: middle;">Erneut versuchen?</span>
-              <a href="" title="Neu laden" style="margin-left: 10px; vertical-align: middle;">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" style="vertical-align: middle;">
-                  <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 3.31-2.69 6-6 6a6.006 6.006 0 01-5.65-4.35l-1.92.51A8.003 8.003 0 0012 20c4.42 0 8-3.58 8-8s-3.58-8-8-8z" fill="#00778A"/>
-                </svg>
-              </a>
-            </p>
-            <p>Besuchen Sie auch unsere offizielle Website:</p>
-            <a href="https://www.sicos-bw.de" target="_blank" style="font-size: 1.2rem; color: #00778A; text-decoration: underline;">www.sicos-bw.de</a>
-          </div>
-        `;
-      }
-    })();
-  </script>
+<script>
+  document.body.style.display = "block";
+  document.getElementById('content').style.display = 'block';
+</script>
 </body>
 </html>
