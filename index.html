@@ -31,27 +31,18 @@
       margin-top: 1rem;
       padding-left: 1.2rem;
     }
-    .cta a {
-      display: inline-block;
-      background-color: #00778A;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1.5rem;
-    }
-    .cta a:hover {
-      background-color: #005f6f;
-    }
     .screenshot {
       margin-top: 1rem;
       text-align: center;
     }
-    .screenshot img {
+    .screenshot a img {
       max-width: 100%;
       border-radius: 10px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .screenshot a img:hover {
+      transform: scale(1.01);
     }
   </style>
 </head>
@@ -63,11 +54,14 @@
 
     <h3>🧠 Lernen Sie <strong>LOTHAR</strong> kennen – den SICOS BW Geschichten-GPT</h3>
     <p>
-      <strong>LOTHAR</strong> ist unser KI-basierter Geschichtenerzähler, benannt nach Lothar Späth – Symbol für Innovationskraft und Brücken zwischen Wirtschaft, Politik und Technologie. Bitte auf den Screenshot clicken um LOTHAR aufzurufen.
+      <strong>LOTHAR</strong> ist unser KI-basierter Geschichtenerzähler, benannt nach Lothar Späth – Symbol für Innovationskraft und Brücken zwischen Wirtschaft, Politik und Technologie.
+Bitte auf den Screenshot clicken um LOTHAR aufzurufen.) 
     </p>
 
     <div class="screenshot">
-      <img src="Lothar%20Geschichten.png" alt="Screenshot des Lothar GPT" />
+      <a href="https://chatgpt.com/g/g-6833681ef1cc8191995f2b3db75f3a91-sicos-bw-geschichten-gpt" target="_blank">
+        <img src="Lothar%20Geschichten.png" alt="Screenshot des Lothar GPT" />
+      </a>
     </div>
 
     <p><em>Diese Seite ist mit heißer Nadel gestrickt. Eine spätere Integration via API ist natürlich geplant.</em></p>
@@ -89,25 +83,26 @@
 
     <p><strong>Interesse, LOTHAR mit uns weiterzuentwickeln?</strong><br>
     👉 Kontaktieren Sie <strong>Mark Finnern</strong> unter <a href="mailto:mark@finnern.com">mark@finnern.com</a>.</p>
-
-    <div class="cta">
-      <a href="#">📅 Pilotgespräch vereinbaren</a>
-    </div>
   </div>
 
   <div id="error" style="display:none;"></div>
 
   <script>
-    (function() {
+    document.addEventListener("DOMContentLoaded", function () {
+      const content = document.getElementById("content");
+      const error = document.getElementById("error");
+      const correctPassword = "15sicosbw";
+
       document.body.style.display = "block";
-      var password = prompt("Diese Seite ist geschützt. Bitte geben Sie das Passwort ein:");
-      if (password === "15sicosbw") {
-        document.getElementById('content').style.display = 'block';
-        document.getElementById('error').style.display = 'none';
+
+      const password = prompt("Diese Seite ist geschützt. Bitte geben Sie das Passwort ein:");
+      if (password === correctPassword) {
+        content.style.display = "block";
+        error.style.display = "none";
       } else {
-        document.getElementById('content').style.display = 'none';
-        document.getElementById('error').style.display = 'block';
-        document.getElementById('error').innerHTML = `
+        content.style.display = "none";
+        error.style.display = "block";
+        error.innerHTML = `
           <div style="text-align:center; margin-top: 5rem;">
             <h2>Leider war das nicht das richtige Passwort.</h2>
             <p>
@@ -123,7 +118,7 @@
           </div>
         `;
       }
-    })();
+    });
   </script>
 </body>
 </html>
